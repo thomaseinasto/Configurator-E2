@@ -4,17 +4,17 @@ Begin VB.Form Form1
    BackColor       =   &H80000005&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Evikon Series Configurator"
-   ClientHeight    =   11115
-   ClientLeft      =   45
-   ClientTop       =   390
-   ClientWidth     =   21735
+   ClientHeight    =   10170
+   ClientLeft      =   5670
+   ClientTop       =   1230
+   ClientWidth     =   16305
    Icon            =   "E005.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   1072.359
+   ScaleHeight     =   981.187
    ScaleMode       =   0  'User
-   ScaleWidth      =   1448.748
+   ScaleWidth      =   1086.811
    Begin VB.Frame Homepage 
       BackColor       =   &H8000000E&
       Caption         =   "Home Page"
@@ -28,10 +28,10 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H80000006&
-      Height          =   9735
+      Height          =   9855
       Left            =   240
       TabIndex        =   234
-      Top             =   720
+      Top             =   120
       Width           =   15855
       Begin VB.CommandButton PVT10 
          Caption         =   "PVT10 Configurator"
@@ -4497,339 +4497,340 @@ Combo_sensor_type.Clear
     Combo_sensor_type.AddItem ("NO2-AE"), 3
 End If
 End Sub
-
 Private Sub Combo_sensor_type_Click()
+If Form1.Frame_E222X.Caption = "E26XX" And Form1.Combo_gas_type.Visible = True Then
 'CH4 Settings
-If Combo_gas_type.ListIndex = 0 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ If Combo_gas_type.ListIndex = 0 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 2 Then
+  ElseIf Combo_sensor_type.ListIndex = 2 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'CO Settings
-ElseIf Combo_gas_type.ListIndex = 1 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 1 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "42"
    Text_const_C.Text = "79"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "46"
    Text_const_C.Text = "85"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 2 Then
+  ElseIf Combo_sensor_type.ListIndex = 2 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "48"
    Text_const_C.Text = "76"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 3 Then
+  ElseIf Combo_sensor_type.ListIndex = 3 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "45"
    Text_const_C.Text = "76"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+ End If
 'O2 Settings
-ElseIf Combo_gas_type.ListIndex = 2 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 2 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "93"
    Text_const_C.Text = "120"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "150"
    Text_const_C.Text = "240"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 2 Then
+  ElseIf Combo_sensor_type.ListIndex = 2 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "150"
    Text_const_C.Text = "260"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'NH3 Settings
-ElseIf Combo_gas_type.ListIndex = 3 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 3 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "47"
    Text_const_C.Text = "50"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "47"
    Text_const_C.Text = "50"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 2 Then
+  ElseIf Combo_sensor_type.ListIndex = 2 Then
    Text_heater_pulse.Text = "14"
    Text_sensor_pulse.Text = "5"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'H2 Settings
-ElseIf Combo_gas_type.ListIndex = 4 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 4 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'VOC Settings
-ElseIf Combo_gas_type.ListIndex = 5 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 5 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'LPG Settings
-ElseIf Combo_gas_type.ListIndex = 6 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 6 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'HFC Settings
-ElseIf Combo_gas_type.ListIndex = 7 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 7 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "1000"
    Text_sensor_pulse.Text = "1000"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'O3 Settings
-ElseIf Combo_gas_type.ListIndex = 8 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 8 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'H2S Settings
-ElseIf Combo_gas_type.ListIndex = 9 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 9 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "73"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "116"
    Text_const_C.Text = "200"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'HCL Settings
-ElseIf Combo_gas_type.ListIndex = 10 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 10 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "92"
    Text_const_C.Text = "200"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'CL2 Settings
-ElseIf Combo_gas_type.ListIndex = 11 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 11 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'SO2 Settings
-ElseIf Combo_gas_type.ListIndex = 12 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 12 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "48"
    Text_const_C.Text = "54"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'C2H4 Settings
-ElseIf Combo_gas_type.ListIndex = 13 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 13 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'ETO Settings
-ElseIf Combo_gas_type.ListIndex = 14 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 14 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "30"
    Text_const_C.Text = "500"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "46"
    Text_const_C.Text = "130"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'NO Settings
-ElseIf Combo_gas_type.ListIndex = 15 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 15 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "59"
    Text_const_C.Text = "70"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 2 Then
+  ElseIf Combo_sensor_type.ListIndex = 2 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "46"
    Text_const_C.Text = "65"
    Text_const_D.Text = "32000"
    Text_const_E.Text = "0"
-End If
+  End If
 'NO2 Settings
-ElseIf Combo_gas_type.ListIndex = 16 Then
-If Combo_sensor_type.ListIndex = 0 Then
+ ElseIf Combo_gas_type.ListIndex = 16 Then
+  If Combo_sensor_type.ListIndex = 0 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "73"
    Text_const_C.Text = "100"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 1 Then
+  ElseIf Combo_sensor_type.ListIndex = 1 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "100"
    Text_const_C.Text = "100"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 2 Then
+  ElseIf Combo_sensor_type.ListIndex = 2 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "118"
    Text_const_C.Text = "180"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-ElseIf Combo_sensor_type.ListIndex = 3 Then
+  ElseIf Combo_sensor_type.ListIndex = 3 Then
    Text_heater_pulse.Text = "0"
    Text_sensor_pulse.Text = "1"
    Text_const_B.Text = "85"
    Text_const_C.Text = "120"
    Text_const_D.Text = "-32000"
    Text_const_E.Text = "0"
-End If
+  End If
+ End If
 End If
 End Sub
 Private Sub Command2_Click()
@@ -4924,20 +4925,20 @@ Private Sub E22XX_Conf_Click()
    Form1.Text_SW.Text = "502"
    Text_SW.Visible = False
    'K
-   Text_const_B.Visible = True
-   Label_const_B.Visible = True
-   Label34.Visible = True
+   'Text_const_B.Visible = True
+   'Label_const_B.Visible = True
+   'Label34.Visible = True
    Label34 = "K"
    Text_const_B.Text = "7000"
    'Tm
-   Label_const_C.Visible = True
-   Label35.Visible = True
+   'Label_const_C.Visible = True
+   'Label35.Visible = True
    Label35 = "Tm"
    'Ts
-   Label_const_D.Visible = True
-   Label32.Visible = True
+   'Label_const_D.Visible = True
+   'Label32.Visible = True
    Label32 = "Ts"
-   Command2.Visible = True
+   'Command2.Visible = True
    Command2.Caption = "SHC"
    Text_factory.Text = "0"
    Form1.slave_id_global = "1"
@@ -4958,6 +4959,18 @@ Private Sub E22XX_Conf_Click()
    Combo_AN1_diag.ListIndex = 1
    Combo_AN2_diag.ListIndex = 1
    Combo_global_AN.ListIndex = 0
+   Combo_RE1_onoff.Clear
+   Combo_RE1_onoff.AddItem ("OFF"), 0
+   Combo_RE1_onoff.AddItem ("Temp"), 1
+   Combo_RE1_onoff.AddItem ("Hum"), 2
+   Combo_RE1_onoff.AddItem ("ModBus"), 3
+   Combo_RE2_onoff.Clear
+   Combo_RE2_onoff.AddItem ("OFF"), 0
+   Combo_RE2_onoff.AddItem ("Temp"), 1
+   Combo_RE2_onoff.AddItem ("Hum"), 2
+   Combo_RE2_onoff.AddItem ("ModBus"), 3
+   Combo_RE1_onoff.ListIndex = 0
+   Combo_RE2_onoff.ListIndex = 0
 Call port_scan
 End Sub
 
@@ -5005,6 +5018,18 @@ Private Sub E26XX_Conf_Click()
    Label34 = "Const B"
    Label32 = "Const D"
    Label35 = "Const C"
+   Combo_RE1_onoff.Clear
+   Combo_RE1_onoff.AddItem ("OFF"), 0
+   Combo_RE1_onoff.AddItem ("Temp"), 1
+   Combo_RE1_onoff.AddItem ("GAS"), 2
+   Combo_RE1_onoff.AddItem ("ModBus"), 3
+   Combo_RE1_onoff.ListIndex = 0
+   Combo_RE2_onoff.Clear
+   Combo_RE2_onoff.AddItem ("OFF"), 0
+   Combo_RE2_onoff.AddItem ("Temp"), 1
+   Combo_RE2_onoff.AddItem ("GAS"), 2
+   Combo_RE2_onoff.AddItem ("ModBus"), 3
+   Combo_RE2_onoff.ListIndex = 0
 Call port_scan
 End Sub
 
@@ -5135,20 +5160,20 @@ Private Sub PVT10_Click()
    Text_slave_id0.Text = "16"
    RH_units.Visible = True
    'K
-   Text_const_B.Visible = True
-   Label_const_B.Visible = True
-   Label34.Visible = True
+   'Text_const_B.Visible = True
+   'Label_const_B.Visible = True
+   'Label34.Visible = True
    Label34 = "K"
    Text_const_B.Text = "7000"
    'Tm
-   Label_const_C.Visible = True
-   Label35.Visible = True
+   'Label_const_C.Visible = True
+   'Label35.Visible = True
    Label35 = "Tm"
    'Ts
-   Label_const_D.Visible = True
-   Label32.Visible = True
+   'Label_const_D.Visible = True
+   'Label32.Visible = True
    Label32 = "Ts"
-   Command2.Visible = True
+   'Command2.Visible = True
    Command2.Caption = "SHC"
    Text_slave_id.Text = Val("16")
    Form1.slave_id_global = "16"
@@ -5168,6 +5193,18 @@ Private Sub PVT10_Click()
    Combo_AN1_diag.ListIndex = 1
    Combo_AN2_diag.ListIndex = 1
    Combo_global_AN.ListIndex = 0
+   Combo_RE1_onoff.Clear
+   Combo_RE1_onoff.AddItem ("OFF"), 0
+   Combo_RE1_onoff.AddItem ("Temp"), 1
+   Combo_RE1_onoff.AddItem ("Hum"), 2
+   Combo_RE1_onoff.AddItem ("ModBus"), 3
+   Combo_RE2_onoff.Clear
+   Combo_RE2_onoff.AddItem ("OFF"), 0
+   Combo_RE2_onoff.AddItem ("Temp"), 1
+   Combo_RE2_onoff.AddItem ("Hum"), 2
+   Combo_RE2_onoff.AddItem ("ModBus"), 3
+   Combo_RE1_onoff.ListIndex = 0
+   Combo_RE2_onoff.ListIndex = 0
 Call port_scan
 End Sub
 
@@ -5195,20 +5232,20 @@ Private Sub PVT100_Click()
    Text_slave_id0.Text = "16"
    RH_units.Visible = True
    'K
-   Text_const_B.Visible = True
-   Label_const_B.Visible = True
-   Label34.Visible = True
+   'Text_const_B.Visible = True
+   'Label_const_B.Visible = True
+   'Label34.Visible = True
    Label34 = "K"
    Text_const_B.Text = "7000"
    'Tm
-   Label_const_C.Visible = True
-   Label35.Visible = True
+   'Label_const_C.Visible = True
+   'Label35.Visible = True
    Label35 = "Tm"
    'Ts
-   Label_const_D.Visible = True
-   Label32.Visible = True
+   'Label_const_D.Visible = True
+   'Label32.Visible = True
    Label32 = "Ts"
-   Command2.Visible = True
+   'Command2.Visible = True
    Command2.Caption = "SHC"
    Form1.slave_id_global = "16"
    Text_slave_id = Val("16")
@@ -5228,6 +5265,18 @@ Private Sub PVT100_Click()
    Combo_AN1_diag.ListIndex = 1
    Combo_AN2_diag.ListIndex = 1
    Combo_global_AN.ListIndex = 0
+   Combo_RE1_onoff.Clear
+   Combo_RE1_onoff.AddItem ("OFF"), 0
+   Combo_RE1_onoff.AddItem ("Temp"), 1
+   Combo_RE1_onoff.AddItem ("Hum"), 2
+   Combo_RE1_onoff.AddItem ("ModBus"), 3
+   Combo_RE2_onoff.Clear
+   Combo_RE2_onoff.AddItem ("OFF"), 0
+   Combo_RE2_onoff.AddItem ("Temp"), 1
+   Combo_RE2_onoff.AddItem ("Hum"), 2
+   Combo_RE2_onoff.AddItem ("ModBus"), 3
+   Combo_RE1_onoff.ListIndex = 0
+   Combo_RE2_onoff.ListIndex = 0
 Call port_scan
 End Sub
 
@@ -5368,6 +5417,14 @@ Label_RH_slope.Visible = True
 Label_RC_filter.Visible = True
 Label24.Visible = True
 Label30.Visible = True
+Command2.Visible = True
+Label34.Visible = True
+Text_const_B.Visible = True
+Label_const_B.Visible = True
+Label35.Visible = True
+Label32.Visible = True
+Label_const_C.Visible = True
+Label_const_D.Visible = True
 End If
 ElseIf Form1.Frame_E222X.Caption = "PVT100" Then
 If Text_factory.Text = "0xA55A" Then
@@ -5397,6 +5454,14 @@ Label_RH_slope.Visible = True
 Label_RC_filter.Visible = True
 Label24.Visible = True
 Label30.Visible = True
+Command2.Visible = True
+Label34.Visible = True
+Text_const_B.Visible = True
+Label_const_B.Visible = True
+Label35.Visible = True
+Label32.Visible = True
+Label_const_C.Visible = True
+Label_const_D.Visible = True
 End If
 ElseIf Form1.Frame_E222X.Caption = "PVT10" Then
 If Text_factory.Text = "0xA55A" Then
@@ -5426,6 +5491,14 @@ Label_RH_slope.Visible = True
 Label_RC_filter.Visible = True
 Label24.Visible = True
 Label30.Visible = True
+Command2.Visible = True
+Label34.Visible = True
+Text_const_B.Visible = True
+Label_const_B.Visible = True
+Label35.Visible = True
+Label32.Visible = True
+Label_const_C.Visible = True
+Label_const_D.Visible = True
 End If
 End If
 
@@ -6144,60 +6217,7 @@ ElseIf Form1.Frame_E222X.Caption = "PVT100" Then
  End If
 End If
 End Sub
-Private Sub Text_AN1_0deg_Validate(Cancel As Boolean) 'Texbox-de valideerimine: et oleksid numbrid ja et oleksid õiges vahemikus
-Dim temp As Long
-If IsNumeric(Text_AN1_0deg.Text) Then
-   temp = CDbl(Text_AN1_0deg.Text)
-   If Combo_AN1_onoff.ListIndex = 1 Then
-      If temp > -41 And temp < 86 Then
-      Text_AN1_0deg.Text = temp
-      Else
-      Text_AN1_0deg.Text = "0"
-      End If
-   ElseIf Combo_AN1_onoff.ListIndex = 2 Then
-      If temp > -1 And temp < 32001 Then
-      Text_AN1_0deg.Text = temp
-      Else
-      Text_AN1_0deg.Text = "0"
-      End If
-   Else
-      Text_AN1_0deg.Text = "0"
-      Text_AN1_100deg.Text = "85"
-   End If
-   
-Else
-   Text_AN1_0deg.Text = "0"
-   Text_AN1_100deg.Text = "85"
-End If
-
-End Sub
-Private Sub Text_AN1_100deg_Validate(Cancel As Boolean) 'Texbox-de valideerimine: et oleksid numbrid ja et oleksid õiges vahemikus
-Dim temp As Long
-If IsNumeric(Text_AN1_100deg.Text) Then
-   temp = CDbl(Text_AN1_100deg.Text)
-   If Combo_AN1_onoff.ListIndex = 1 Then
-      If temp > -41 And temp < 86 Then
-      Text_AN1_100deg.Text = temp
-      Else
-      Text_AN1_100deg.Text = "85"
-      End If
-   ElseIf Combo_AN1_onoff.ListIndex = 2 Then
-      If temp > -1 And temp < 32001 Then
-      Text_AN1_100deg.Text = temp
-      Else
-      Text_AN1_100deg.Text = "85"
-      End If
-   Else
-      Text_AN1_0deg.Text = "0"
-      Text_AN1_100deg.Text = "85"
-   End If
-   
-Else
-   Text_AN1_0deg.Text = "0"
-   Text_AN1_100deg.Text = "85"
-End If
-
-End Sub
+''''''''''''''''''''''''''''Analog 1 validation
 Private Sub Text_AN1_0deg_Change()
 If Text_AN1_0deg.Text = Text_AN1_100deg.Text Then
    Text_AN1_0deg.Text = "0"
@@ -6270,60 +6290,7 @@ ElseIf Form1.Frame_E222X.Caption = "E22XX" Then
  End If
 End If
 End Sub
-Private Sub Text_AN2_0deg_Validate(Cancel As Boolean) 'Texbox-de valideerimine: et oleksid numbrid ja et oleksid õiges vahemikus
-Dim temp As Long
-If IsNumeric(Text_AN2_0deg.Text) Then
-   temp = CDbl(Text_AN2_0deg.Text)
-   If Combo_AN2_onoff.ListIndex = 1 Then
-      If temp > -41 And temp < 86 Then
-      Text_AN2_0deg.Text = temp
-      Else
-      Text_AN2_0deg.Text = "0"
-      End If
-   ElseIf Combo_AN2_onoff.ListIndex = 2 Then
-      If temp > -1 And temp < 32001 Then
-      Text_AN2_0deg.Text = temp
-      Else
-      Text_AN2_0deg.Text = "0"
-      End If
-   Else
-      Text_AN2_0deg.Text = "0"
-      Text_AN2_100deg.Text = "85"
-   End If
-   
-Else
-   Text_AN2_0deg.Text = "0"
-   Text_AN2_100deg.Text = "85"
-End If
-
-End Sub
-Private Sub Text_AN2_100deg_Validate(Cancel As Boolean) 'Texbox-de valideerimine: et oleksid numbrid ja et oleksid õiges vahemikus
-Dim temp As Long
-If IsNumeric(Text_AN2_100deg.Text) Then
-   temp = CDbl(Text_AN2_100deg.Text)
-   If Combo_AN2_onoff.ListIndex = 1 Then
-      If temp > -41 And temp < 86 Then
-      Text_AN2_100deg.Text = temp
-      Else
-      Text_AN2_100deg.Text = "85"
-      End If
-   ElseIf Combo_AN2_onoff.ListIndex = 2 Then
-      If temp > -1 And temp < 32001 Then
-      Text_AN2_100deg.Text = temp
-      Else
-      Text_AN2_100deg.Text = "85"
-      End If
-   Else
-      Text_AN2_0deg.Text = "0"
-      Text_AN2_100deg.Text = "85"
-   End If
-   
-Else
-   Text_AN2_0deg.Text = "0"
-   Text_AN2_100deg.Text = "85"
-End If
-
-End Sub
+'''''''''''''''''''''' Analog 2 validate
 Private Sub Text_AN2_0deg_Change()
 If Text_AN2_0deg.Text = Text_AN2_100deg.Text Then
    Text_AN2_0deg.Text = "0"
@@ -6394,20 +6361,63 @@ End If
 End Sub
 'RE1 SETPOINTS******************************************************************************
 Private Sub Combo_RE1_onoff_Click()
-If Combo_RE1_onoff.ListIndex = 0 Then
+If Form1.Frame_E222X.Caption = "E26XX" Then
+ If Combo_RE1_onoff.ListIndex = 0 Then
    Text_RE1_L.Text = "0"
    Text_RE1_H.Text = "85"
-ElseIf Combo_RE1_onoff.ListIndex = 1 Then
+ ElseIf Combo_RE1_onoff.ListIndex = 1 Then
    Text_RE1_L.Text = "-40"
    Text_RE1_H.Text = "85"
-ElseIf Combo_RE1_onoff.ListIndex = 2 Then
+ ElseIf Combo_RE1_onoff.ListIndex = 2 Then
    Text_RE1_L.Text = "0"
    Text_RE1_H.Text = "32000"
-ElseIf Combo_RE1_onoff.ListIndex = 3 Then
+ ElseIf Combo_RE1_onoff.ListIndex = 3 Then
    Text_RE1_L.Text = "0"
    Text_RE1_H.Text = "85"
+ End If
+ElseIf Form1.Frame_E222X.Caption = "E22XX" Then
+ If Combo_RE1_onoff.ListIndex = 0 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 1 Then
+   Text_RE1_L.Text = "-40"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 2 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "0"
+ ElseIf Combo_RE1_onoff.ListIndex = 3 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ End If
+ElseIf Form1.Frame_E222X.Caption = "PVT10" Then
+ If Combo_RE1_onoff.ListIndex = 0 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 1 Then
+   Text_RE1_L.Text = "-40"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 2 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "0"
+ ElseIf Combo_RE1_onoff.ListIndex = 3 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ End If
+ElseIf Form1.Frame_E222X.Caption = "PVT100" Then
+ If Combo_RE1_onoff.ListIndex = 0 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 1 Then
+   Text_RE1_L.Text = "-40"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 2 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "0"
+ ElseIf Combo_RE1_onoff.ListIndex = 3 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ End If
 End If
-
 End Sub
 Private Sub Text_RE1_L_Validate(Cancel As Boolean) 'Texbox-de valideerimine: et oleksid numbrid ja et oleksid õiges vahemikus
 Dim temp As Long
@@ -6477,20 +6487,63 @@ End If
 End Sub
 'RE2 SETPOINTS******************************************************************************
 Private Sub Combo_RE2_onoff_Click()
-If Combo_RE2_onoff.ListIndex = 0 Then
+If Form1.Frame_E222X.Caption = "E26XX" Then
+ If Combo_RE2_onoff.ListIndex = 0 Then
    Text_RE2_L.Text = "0"
    Text_RE2_H.Text = "85"
-ElseIf Combo_RE2_onoff.ListIndex = 1 Then
+ ElseIf Combo_RE2_onoff.ListIndex = 1 Then
    Text_RE2_L.Text = "-40"
    Text_RE2_H.Text = "85"
-ElseIf Combo_RE2_onoff.ListIndex = 2 Then
+ ElseIf Combo_RE2_onoff.ListIndex = 2 Then
    Text_RE2_L.Text = "0"
    Text_RE2_H.Text = "32000"
-ElseIf Combo_RE2_onoff.ListIndex = 3 Then
+ ElseIf Combo_RE2_onoff.ListIndex = 3 Then
    Text_RE2_L.Text = "0"
    Text_RE2_H.Text = "85"
 End If
-
+ElseIf Form1.Frame_E222X.Caption = "E22XX" Then
+ If Combo_RE1_onoff.ListIndex = 0 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 1 Then
+   Text_RE1_L.Text = "-40"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 2 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "0"
+ ElseIf Combo_RE1_onoff.ListIndex = 3 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ End If
+ElseIf Form1.Frame_E222X.Caption = "PVT10" Then
+ If Combo_RE1_onoff.ListIndex = 0 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 1 Then
+   Text_RE1_L.Text = "-40"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 2 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "0"
+ ElseIf Combo_RE1_onoff.ListIndex = 3 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ End If
+ElseIf Form1.Frame_E222X.Caption = "PVT100" Then
+ If Combo_RE1_onoff.ListIndex = 0 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 1 Then
+   Text_RE1_L.Text = "-40"
+   Text_RE1_H.Text = "85"
+ ElseIf Combo_RE1_onoff.ListIndex = 2 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "0"
+ ElseIf Combo_RE1_onoff.ListIndex = 3 Then
+   Text_RE1_L.Text = "0"
+   Text_RE1_H.Text = "85"
+ End If
+End If
 End Sub
 Private Sub Text_RE2_L_Validate(Cancel As Boolean) 'Texbox-de valideerimine: et oleksid numbrid ja et oleksid õiges vahemikus
 Dim temp As Long
